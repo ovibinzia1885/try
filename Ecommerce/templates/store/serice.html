@@ -1,0 +1,43 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+ <div id="breadcrum">
+      <div class="container">
+          <div>
+              <ul class="breadcrumb">
+                  <li> <a href="">Home</a></li>
+                  >>
+                  <li class="active">service</li>
+              </ul>
+
+          </div>
+
+      </div>
+
+  </div>
+      <div class="page-section mb-60">
+     <div class="container">
+         <div class="row">
+             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 mb-30">
+                 <h1 class="font-weight-bold">service</h1>
+
+             </div>
+
+                 <form method="POST" enctype="multipart/form-data">
+                     {% csrf_token %}
+                     <fieldset class="form-group">
+                         {{ form.as_p  }}
+
+                     </fieldset>
+                     <div class="form-group">
+                         <button class="primary-btn" type="submit">submit</button>
+                     </div>
+                 </form>
+
+             </div>
+         </div>
+         <!-- /row -->
+     </div>
+     <!-- /container -->
+ </div>
+{% endblock %}

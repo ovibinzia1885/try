@@ -1,0 +1,53 @@
+
+{% block content  %}
+<div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">FAQ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Breadcrumb Area End Here -->
+            <!-- Begin Frequently Area -->
+            <div class="frequently-area pt-60 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="frequently-content">
+                                <div class="frequently-desc">
+
+                                </div>
+                            </div>
+                            <!-- Begin Frequently Accordin -->
+                            <div class="frequently-accordion">
+                                <div id="accordion">
+                                    {% for p in faq  %}
+
+                                  <div class="card">
+                                    <div class="card-header" id="heading{{p.ordernumber}}">
+                                      <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse{{p.ordernumber}}" aria-expanded="false" aria-controls="collapse{{p.ordernumber}}">
+                                        {{p.question}}
+                                        </a>
+                                      </h5>
+                                    </div>
+                                    <div id="collapse{{p.ordernumber}}" class="collapse" aria-labelledby="heading{{p.ordernumber}}" data-parent="#accordion">
+                                      <div class="card-body">
+                                    {{p.answer}}
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <!--Frequently Accordin End Here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
